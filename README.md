@@ -46,10 +46,10 @@ Content-Type: application/json
   "email": "sara@7learn.com"
 }
 ```
-```
+```http
 GET /api/v1/cities/index.php?province_id=1&page=1&page_size=5
 ```
-```
+```http
 POST /api/v1/cities/index.php
 Content-Type: application/json
 Authorization: Bearer your.jwt.token
@@ -59,7 +59,7 @@ Authorization: Bearer your.jwt.token
   "province_id":40
 }
 ```
-```
+```http
 PUT /api/v1/cities/index.php
 Content-Type: application/json
 Authorization: Bearer your.jwt.token
@@ -69,7 +69,7 @@ Authorization: Bearer your.jwt.token
   "city_name": "New Gorgan"
 }
 ```
-```
+```http
 DELETE /api/v1/cities/index.php?city_id=7
 Authorization: Bearer your.jwt.token
 ```
