@@ -30,7 +30,7 @@ A simple and powerful RESTful API built with vanilla PHP to manage **cities** an
 ---
 
 ## 🧪 How to Use
-Run sql/iran.sql file to create database
+Run sql/iran.sql file to create database <br>
 Follow these steps to authenticate and interact with the API:
 
 ### ✅ 1. Generate JWT Token
