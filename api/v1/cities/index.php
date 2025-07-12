@@ -4,10 +4,12 @@ use App\Services\CityService;
 use App\Utilities\Cache;
 use App\Utilities\Response;
 $token = getBearerToken();
+if (!$token)
+    Response::respondAndDie(['Invalid Token!'], Response::HTTP_UNAUTHORIZED);
 $user = isValidToken($token);
-
 if (!$user)
     Response::respondAndDie(['Invalid Token!'], Response::HTTP_UNAUTHORIZED);
+
 $cityServiceModel = new CityService();
 $requestBody = json_decode(file_get_contents("php://input"), true);
 $requestMethod = $_SERVER["REQUEST_METHOD"];
@@ -22,6 +24,8 @@ switch ($requestMethod) {
         $pageSize = $_GET["page_size"] ?? null;
         if ((isset($provinceId) && !is_numeric($provinceId)) || (isset($page) && !is_numeric($page)))
             Response::respondAndDie(["Invalid Property"], Response::HTTP_NOT_ACCEPTABLE);
+        if (!hasAccessToProvince($user, $provinceId))
+            Response::respondAndDie(["You Don't Have Access To These Citites"]);
         Cache::start();
         $data = ["province_id" => $provinceId, "order_by" => $orderBy, "fields" => $fields, "page" => $page, "page_size" => $pageSize];
         $result = $cityServiceModel->getCities($data);

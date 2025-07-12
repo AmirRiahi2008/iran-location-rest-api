@@ -141,7 +141,7 @@ $users = [
     (object) ['id' => 1, 'name' => 'Loghman', 'email' => 'loghman@7learn.com', 'role' => 'admin', 'allowed_provinces' => []],
     (object) ['id' => 2, 'name' => 'Sara', 'email' => 'sara@7learn.com', 'role' => 'Governor', 'allowed_provinces' => [7, 8, 9]],
     (object) ['id' => 3, 'name' => 'Ali', 'email' => 'ali@7learn.com', 'role' => 'mayor', 'allowed_provinces' => [3]],
-    (object) ['id' => 4, 'name' => 'Hassan', 'email' => 'hassan@7learn.com', 'role' => 'president', 'allowed_provinces' => []]
+    (object) ['id' => 4, 'name' => 'Hassan', 'email' => 'hassan@7learn.com', 'role' => 'president', 'allowed_provinces' => [2]]
 ];
 
 function getUserById($id)
